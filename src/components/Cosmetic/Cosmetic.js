@@ -5,11 +5,18 @@ import "./Cosmetic.css";
 const Cosmetic = (props) => {
 
     //destructuring
-    const { name, age } = props.cosmetic;
+    const { name, age, _id } = props.cosmetic;
+    const addToCart = (id) => {
+        console.log("Item add to cart", id);
+    }
+
+    const addToCartWithParam = () => addToCart(_id);
     return (
-        <div>
+        <div className="product">
             <h2>Buy this:{name} </h2>
             <p>Only for : ${age}</p>
+            <p>ID: ${_id}</p>
+            <button onClick={addToCartWithParam}>Add to cart</button>
         </div>
     );
 };

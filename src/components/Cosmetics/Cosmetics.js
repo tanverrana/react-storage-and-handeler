@@ -1,4 +1,5 @@
 import React from 'react';
+import Cosmetic from '../Cosmetic/Cosmetic';
 
 //import add from '../../utilities/calculate';
 
@@ -14,10 +15,12 @@ const Cosmetics = () => {
         <div>
             <h1>Welcome to my Cosmetics.</h1>
             {
-                cosmetics.map(cosmetic => console.log(cosmetic))
+                cosmetics.map(cosmetic => <Cosmetic key={cosmetic.id}
+                    cosmetic={cosmetic}
+                ></Cosmetic>)
             }
 
-        </div>
+        </div >
     );
 };
 

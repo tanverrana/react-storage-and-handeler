@@ -1,4 +1,4 @@
-import { addToDb } from '../../utilities/fakedb';
+import { addToDb, removeFromDb } from '../../utilities/fakedb';
 import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
@@ -9,6 +9,10 @@ const Cosmetic = (props) => {
         addToDb(id);
     }
 
+    const removeFromCart = id => {
+        removeFromDb(id);
+    }
+
     const addToCartWithParam = () => addToCart(_id);
     return (
         <div className="product">
@@ -17,6 +21,7 @@ const Cosmetic = (props) => {
             <p>ID: ${_id}</p>
             <button onClick={addToCartWithParam}>Add to cart</button>
             <button onClick={() => addToCart(_id)}>Add to cart 2</button>
+            <button onClick={() => removeFromCart(_id)}>Remove</button>
         </div>
     );
 };

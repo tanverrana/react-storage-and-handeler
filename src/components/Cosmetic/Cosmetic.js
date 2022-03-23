@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { addToDb } from '../../utilities/fakedb';
 import "./Cosmetic.css";
 

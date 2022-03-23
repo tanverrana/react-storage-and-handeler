@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { addToDb } from '../../utilities/fakedb';
 import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
@@ -7,7 +8,7 @@ const Cosmetic = (props) => {
     //destructuring
     const { name, age, _id } = props.cosmetic;
     const addToCart = (id) => {
-        console.log("Item add to cart", id);
+        addToDb(id);
     }
 
     const addToCartWithParam = () => addToCart(_id);
@@ -17,7 +18,7 @@ const Cosmetic = (props) => {
             <p>Only for : ${age}</p>
             <p>ID: ${_id}</p>
             <button onClick={addToCartWithParam}>Add to cart</button>
-            <button onClick={() => addToCart(_id)}>Purchase</button>
+            <button onClick={() => addToCart(_id)}>Add to cart 2</button>
         </div>
     );
 };
